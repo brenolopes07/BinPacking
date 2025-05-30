@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace testel2tecnologia.Domain.DTOs
+﻿namespace testel2tecnologia.Domain.DTOs
 {
     public class PedidoListaInputDto
     {

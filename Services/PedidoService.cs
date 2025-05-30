@@ -51,7 +51,7 @@ namespace testel2tecnologia.Services
                 PedidoId = pedidoSalvo.PedidoId,
                 Caixas = pedidoSalvo.Caixas.Select(c => new CaixaOutputDto
                 {
-                    CaixaId = c.Tipo, 
+                    CaixaId = c.Tipo,
 
                     Produtos = c.CaixaProdutos.Select(cp => cp.Produto.ProdutoId).ToList()
                 }).ToList()

@@ -17,7 +17,7 @@ namespace testel2tecnologia.Domain.Entity
         public double Volume => Altura * Largura * Comprimento;
 
         public int PedidoId { get; set; }
-        public  Pedido Pedido { get; set; } 
+        public Pedido Pedido { get; set; }
 
         public List<CaixaProduto> CaixaProdutos { get; set; } = new List<CaixaProduto>();
 

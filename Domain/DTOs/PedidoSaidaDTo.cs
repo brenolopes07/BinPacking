@@ -12,7 +12,7 @@ public class PedidoOutputDto
 public class CaixaOutputDto
 {
     [JsonPropertyName("caixa_id")]
-    public string CaixaId { get; set; }  
+    public string CaixaId { get; set; }
     [JsonPropertyName("produtos")]
     public List<string> Produtos { get; set; }
 }

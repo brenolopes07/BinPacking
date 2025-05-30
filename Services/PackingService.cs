@@ -5,7 +5,7 @@ namespace testel2tecnologia.Services
 {
     public class PackingService : IPackingService
     {
-        public  List<Caixa> OrganizarProdutoEmCaixas(List<Produto> produtos)
+        public List<Caixa> OrganizarProdutoEmCaixas(List<Produto> produtos)
         {
             var caixasUsadas = new List<Caixa>();
             var produtosNaoCaberam = new List<Produto>();
@@ -16,15 +16,15 @@ namespace testel2tecnologia.Services
 
                 foreach (var caixa in caixasUsadas)
                 {
-                    if (CabeNaCaixa (caixa, produto))
+                    if (CabeNaCaixa(caixa, produto))
                     {
-                       caixa.CaixaProdutos.Add (new CaixaProduto 
-                       {
+                        caixa.CaixaProdutos.Add(new CaixaProduto
+                        {
                             Caixa = caixa,
                             Produto = produto,
                             ProdutoId = produto.ProdutoId,
                             CaixaId = caixa.CaixaId
-                       });
+                        });
 
                         colocado = true;
                         break;
@@ -35,7 +35,7 @@ namespace testel2tecnologia.Services
                 {
                     var caixaDisponivel = CaixasDisponiveis.Todas.FirstOrDefault(c => CabeNaCaixa(c, produto));
 
-                    if(caixaDisponivel == null)
+                    if (caixaDisponivel == null)
                     {
                         produtosNaoCaberam.Add(produto);
                         continue;
@@ -57,7 +57,7 @@ namespace testel2tecnologia.Services
                         ProdutoId = produto.ProdutoId
                     });
 
-                    caixasUsadas.Add(novaCaixa);    
+                    caixasUsadas.Add(novaCaixa);
                 }
 
             }
@@ -67,11 +67,11 @@ namespace testel2tecnologia.Services
 
         public bool CabeNaCaixa(Caixa caixa, Produto produto)
         {
-            return produto.Altura <= caixa.Altura && 
-                   produto.Largura <= caixa.Largura && 
+            return produto.Altura <= caixa.Altura &&
+                   produto.Largura <= caixa.Largura &&
                    produto.Comprimento <= caixa.Comprimento;
         }
 
-        
+
     }
 }

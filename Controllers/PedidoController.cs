@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using testel2tecnologia.Domain.DTOs;
-using testel2tecnologia.Domain.Entity;
 using testel2tecnologia.Services.Interface;
 
 namespace testel2tecnologia.Controllers
