@@ -14,7 +14,7 @@ namespace testel2tecnologia.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Pedido
+            
             modelBuilder.Entity<Pedido>(entity =>
             {
                 entity.HasKey(p => p.PedidoId);
